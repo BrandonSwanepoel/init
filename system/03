@@ -1,0 +1,3 @@
+Edit the /etc/hosts file:
+sudo nano /etc/hosts
+Replace any occurrence of the existing computer name with your new one.
