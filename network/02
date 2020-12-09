@@ -1,4 +1,4 @@
 #Identify broadcast address
-ipconfig
+ip -4 addr
 #Identify all IP adresses which are part of the same subnet
-arp -a
+sudo arp -a
