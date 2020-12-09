@@ -1,0 +1,54 @@
+# !/bin/bash
+
+echo "                  PERCENTAGE CALCULATOR"
+echo "             Get your exam percentage HERE!"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "            We first need some info from you"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo " "
+read -p "Enter your name: " fullname
+echo " "
+errorCheck=0;
+until [ $errorCheck -gt 1 ]
+do
+read -p "How much was the exam total: " total
+
+#Check if input is a number
+ if [[ -n ${total//[0-9&&,&&.]/} ]]; then
+    echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    echo "This input can only be a number"
+    echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    else
+    errorCheck=2;
+fi
+done
+
+echo " "
+errorCheck=0;
+until [ $errorCheck -gt 1 ]
+do
+read -p "How much did you get for the exam: " achievedMarkes
+
+#Check if input is a number
+ if [[ -n ${achievedMarkes//[0-9&&,&&.]/} ]]; then
+    echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    echo "This input can only be a number"
+    echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    else
+    errorCheck=2;
+fi
+done
+
+#Calculate the percentage you got
+
+percentage=$(echo "scale=1; ($achievedMarkes / $total ) * 100" | bc)
+echo " "
+#Show the user what percentage they got
+echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+echo "You got $percentage % for your exam"
+    echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+echo "Thank you for using our service $fullname"
+
