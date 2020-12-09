@@ -1,0 +1,8 @@
+sudo into ~/.ssh/authorized_keys
+Each user has its own ssh key so add the ssh key of the new user that you created in /.ssh/authorized_keys
+
+Use this command at the bottom to connect as the new user on the VM on ssh session
+ssh <new username>@<host or VM ip>
+
+Use this command at the bottom to connect as the new user on the VM on graphic session
+su <username that you want to login with>
